@@ -358,18 +358,6 @@ void doink() {
   Doinker.set(!Doinker.value());
 }
 
-void cycle_mary() {
-  MaryState += 1;
-  MaryState %= 3;
-  if (MaryState == 0) {
-    reset_mary();
-  } else if (MaryState == 1) {
-    prime_mary();
-  } else {
-    score_mary();
-  }
-}
-
 void reset_mary() {
   MaryLeft.spin(reverse, 5.5, volt);
   MaryRight.spin(reverse, 5.5, volt);
@@ -392,6 +380,18 @@ void score_mary() {
   wait(MaryScoreTime, msec);
   MaryLeft.stop();
   MaryRight.stop();
+}
+
+void cycle_mary() {
+  MaryState += 1;
+  MaryState %= 3;
+  if (MaryState == 0) {
+    reset_mary();
+  } else if (MaryState == 1) {
+    prime_mary();
+  } else {
+    score_mary();
+  }
 }
 
 /*
@@ -478,6 +478,9 @@ int main() {
   competition Competition;
   Competition.autonomous(auton);
   Competition.drivercontrol(usercontrol);
+
+  MaryLeft.setStopping(brake);
+  MaryRight.setStopping(brake);
 
   Inert.calibrate();
   while (Inert.isCalibrating()) {
