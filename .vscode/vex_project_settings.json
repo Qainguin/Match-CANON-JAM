@@ -1,0 +1,18 @@
+{
+	"project": {
+		"name": "Match-CANON-JAM",
+		"slot": 1,
+		"description": "",
+		"platform": "V5",
+		"creationDate": "Fri, 13 Dec 2024 00:45:23 GMT",
+		"language": "cpp",
+		"sdkVersion": "V5_20240802_15_00_00",
+		"cpp": {
+			"includePath": []
+		}
+	},
+	"extension": {
+		"version": "0.6.1",
+		"json": 1
+	}
+}
