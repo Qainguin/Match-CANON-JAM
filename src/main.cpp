@@ -361,6 +361,13 @@ void doink() {
 void cycle_mary() {
   MaryState += 1;
   MaryState %= 3;
+  if (MaryState == 0) {
+    reset_mary();
+  } else if (MaryState == 1) {
+    prime_mary();
+  } else {
+    score_mary();
+  }
 }
 
 void reset_mary() {
